@@ -1,22 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import useMetaMask from './hooks/metamask';
+import { Button } from 'antd'
 
 function App() {
+
+  const { connect, isActive, account } = useMetaMask()
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        <Button onClick={connect}> Get Public Key</Button>
+        {isActive ? <span>Public Address: {account}</span> : <span>MetaMask is locked - please login</span>}
       </header>
     </div>
   );
