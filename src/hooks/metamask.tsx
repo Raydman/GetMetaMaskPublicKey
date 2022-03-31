@@ -21,11 +21,11 @@ export const MetaMaskProvider: FunctionComponent<{ children?: any }> = ({ childr
     const [isLoading, setIsLoading] = useState(true)
 
     // Init Loading
-    useEffect(() => {
-        connect().then(val => {
-            setIsLoading(false)
-        })
-    }, [])
+    // useEffect(() => {
+    //     connect().then(val => {
+    //         setIsLoading(false)
+    //     })
+    // }, [])
 
     // Check when App is Connected or Disconnected to MetaMask
     const handleIsActive = useCallback(() => {
